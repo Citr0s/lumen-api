@@ -15,7 +15,7 @@ class SpotifyAdapter
 
     public function search($query, $type)
     {
-        return $this->httpClient($this->url . '/v1/search?q='. $query . '&type=' . $type, HTTP_METH_GET)->send();
+        return $this->httpClient->send($this->url . '/v1/search?q=' . $query . '&type=' . $type, "");
     }
 
     public function getUrl()

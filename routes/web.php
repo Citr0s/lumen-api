@@ -13,7 +13,7 @@
 
 use App\Common\HttpClient;
 
-$app->get('/', function(){
+$app->get('/', function () {
     $request = new \App\Spotify\SpotifyAdapter(new HttpClient());
-    return $request->search('psy', 'artist');
+    return json_decode($request->search('psy', 'artist'));
 });
