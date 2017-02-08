@@ -11,9 +11,8 @@
 |
 */
 
-use App\Common\HttpClient;
-
 $app->get('/', function () {
-    $request = new \App\Spotify\SpotifyAdapter(new HttpClient());
-    return json_decode($request->search('psy', 'artist'));
+    return 'Hello World!';
 });
+
+$app->get('/artist/{artist}/', 'ArtistController@get');
