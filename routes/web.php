@@ -11,6 +11,9 @@
 |
 */
 
+use App\Common\HttpClient;
+
 $app->get('/', function(){
-    return 'Hello World!';
+    $request = new \App\Spotify\SpotifyAdapter(new HttpClient());
+    return $request->search('psy', 'artist');
 });
