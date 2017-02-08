@@ -15,4 +15,6 @@ $app->get('/', function () {
     return 'Hello World!';
 });
 
-$app->get('/artist/{artist}/', 'ArtistController@get');
+$app->get('/artist/{artistName}/', 'ArtistController@get');
+
+$app->get('/track/{trackName}/', 'TrackController@get');
